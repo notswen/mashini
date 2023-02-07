@@ -32,17 +32,37 @@ function db_close($mysqli)
     return mysqli_close($mysqli);
 }
 
-function authorisation($user_name)
+function authorisation($user_name,$password)
 {
     $mysqli = db_connect();
 
-    $sql = "SELECT * FROM users
-    where login = '{$user_name}'";
+    $sql = "SELECT * FROM users";
 
     $aa = mysqli_query($mysqli, $sql);
     $aa = mysqli_fetch_all($aa, MYSQLI_ASSOC);
+    var_dump($aa);
+    if (!empty($aa)){
+        if (password_verify($password, $aa[0]['password'])) {
+            return true;
+        }
+    }
 
     db_close($mysqli);
 
-    return $aa;
+    return false;
 }
+function GetALLBooks()
+{
+    $mysqli = db_connect();
+
+    $sql = "SELECT * FROM books
+    LEFT JOIN authors on authors.id = books.author_id";
+
+    $books = mysqli_query($mysqli, $sql);
+    $books = mysqli_fetch_all($books, MYSQLI_ASSOC);
+
+    db_close($mysqli);
+
+    return $books;
+}
+
