@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .shapka {
     background: url("https://klike.net/uploads/posts/2022-12/1669953459_7-16.jpg");
     width: 100%;
@@ -5,5 +9,8 @@
     background-size: cover;
 }
 .top {
-    background-color: orange;
+    background-color: rgba(173, 255, 47, 0.5);
+    width: 100vw;
+    height: 100vh;
+
 }

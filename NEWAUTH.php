@@ -1,5 +1,6 @@
 <?php
 require_once 'base.php';
+$auth = true;
 if (!empty($_POST['user_name'])) {
     $auth = authorisation($_POST['user_name'], $_POST['password']);
     if ($auth) {
@@ -13,8 +14,8 @@ if (!empty($_POST['user_name'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="design.css"/>
 </head>
-<div class="top">
-    <div class="shapka">
+<div class="shapka">
+    <div class="top">
         <form method="post">
             <label><b>Логин</b></label>
             <input type="text" name="user_name">
@@ -23,6 +24,9 @@ if (!empty($_POST['user_name'])) {
             <label>Пароль</label>
             <input type="password" name="password">
             <br>
+            <?php if (!$auth): ?>
+            <h1>Авторизация неуспешна</h1>
+            <?php endif;?>
             <br>
             <input type="submit">
         </form>

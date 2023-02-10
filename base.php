@@ -1,8 +1,8 @@
 <?php
 const HOSTNAME = 'localhost';
 const USERNAME = 'root';
-const PASSWORD = '';
-const DATABASE = 'da';
+const PASSWORD = 'root';
+const DATABASE = 'forcourse';
 
 function db_connect()
 {
@@ -36,7 +36,8 @@ function authorisation($user_name,$password)
 {
     $mysqli = db_connect();
 
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM users
+where login = '{$user_name}'";
 
     $aa = mysqli_query($mysqli, $sql);
     $aa = mysqli_fetch_all($aa, MYSQLI_ASSOC);
@@ -64,3 +65,19 @@ function GetALLBooks()
 
     return $books;
 }
+function GetALLAuthors()
+{
+
+    $mysqli = db_connect();
+
+    $sql = "SELECT * FROM authors";
+
+    $avtors = mysqli_query($mysqli, $sql);
+    $avtors = mysqli_fetch_all($avtors, MYSQLI_ASSOC);
+
+    db_close($mysqli);
+
+    return $avtors;
+
+}
+
