@@ -1,8 +1,8 @@
 <?php
 const HOSTNAME = 'localhost';
 const USERNAME = 'root';
-const PASSWORD = 'root';
-const DATABASE = 'forcourse';
+const PASSWORD = '';
+const DATABASE = 'da';
 
 function db_connect()
 {
@@ -40,7 +40,6 @@ function authorisation($user_name,$password)
 
     $aa = mysqli_query($mysqli, $sql);
     $aa = mysqli_fetch_all($aa, MYSQLI_ASSOC);
-    var_dump($aa);
     if (!empty($aa)){
         if (password_verify($password, $aa[0]['password'])) {
             return true;
@@ -65,4 +64,3 @@ function GetALLBooks()
 
     return $books;
 }
-
