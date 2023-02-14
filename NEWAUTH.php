@@ -1,6 +1,6 @@
 <?php
 require_once 'base.php';
-//session_start();
+session_start();
 $auth = true;
 if (!empty($_POST['user_name'])) {
     $auth = authorisation($_POST['user_name'], $_POST['password']);
@@ -35,6 +35,5 @@ if (!empty($_POST['user_name'])) {
             <br>
             <input type="submit" style="font-size: 117%">
         </form>
-        <a class="vihod" href="log_out.php" style="color: #43ff21; text-decoration:none;"><b>Выход</b></a>
     </div>
 </div>

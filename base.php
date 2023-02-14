@@ -1,8 +1,8 @@
 <?php
 const HOSTNAME = 'localhost';
 const USERNAME = 'root';
-const PASSWORD = '';
-const DATABASE = 'da';
+const PASSWORD = 'root';
+const DATABASE = 'forcourse';
 
 function db_connect()
 {
@@ -81,19 +81,35 @@ function GetALLAuthors()
 
 }
 
-//function AddToBooks()
-//{
-//
-//    $mysqli = db_connect();
-//
-//    $sql = "INSERT INTO books
-//VALUES ($book['title'],$book['articul'])";
-//
-//    $adding = mysqli_query($mysqli, $sql);
-//    $adding = mysqli_fetch_all($adding, MYSQLI_ASSOC);
-//
-//    db_close($mysqli);
-//
-//    return $adding;
-//
-//}
+function AddToBooks($title,$articul,$description,$author_id,$customauthor)
+{
+
+    $mysqli = db_connect();
+
+    $title = mysqli_real_escape_string($mysqli, $title);
+    $articul = mysqli_real_escape_string($mysqli, $articul);
+    $description = mysqli_real_escape_string($mysqli, $description);
+    $author_id = mysqli_real_escape_string($mysqli, $author_id);
+    $customauthor = mysqli_real_escape_string($mysqli, $customauthor);
+
+    if (!empty($customauthor)){
+        $sql = "INSERT INTO `authors`
+    (first_name, last_name) values 
+    ()
+    
+        
+    }
+
+    $sql = "INSERT INTO `books`
+    (title, articul, description, date_of_create, author_id) VALUES 
+    ('{$title}','{$articul}','{$description}', now(), '{$author_id}');";
+    
+
+
+    $adding = mysqli_query($mysqli, $sql);
+
+    db_close($mysqli);
+
+    return $adding;
+
+}
