@@ -1,5 +1,6 @@
 <?php
 require_once 'base.php';
+//session_start();
 $auth = true;
 if (!empty($_POST['user_name'])) {
     $auth = authorisation($_POST['user_name'], $_POST['password']);
@@ -16,21 +17,24 @@ if (!empty($_POST['user_name'])) {
 </head>
 <div class="shapka">
     <div class="top">
-        <form method="post">
-            <label><b>Логин</b></label>
-            <input type="text" name="user_name">
+        <form method="post" style="
+              padding-left: 39vw;
+              padding-top: 33vh;
+              font-size: 177%;
+              font-family: cursive;">
+            <label class="pripiska_one"><b>Логин</b></label>
+            <input type="text" placeholder="введите логин" name="user_name">
             <br>
             <br>
-            <label>Пароль</label>
-            <input type="password" name="password">
+            <label class="pripiska_two"><b>Пароль</b></label>
+            <input type="password" placeholder="введите пароль" name="password">
             <br>
             <?php if (!$auth): ?>
-            <h1>Авторизация неуспешна</h1>
-            <?php endif;?>
+                <h1>Авторизация неуспешна</h1>
+            <?php endif; ?>
             <br>
-            <input type="submit">
+            <input type="submit" style="font-size: 117%">
         </form>
-        <a href="log_out.php.php">Выход</a>
+        <a class="vihod" href="log_out.php" style="color: #43ff21; text-decoration:none;"><b>Выход</b></a>
     </div>
 </div>
-

@@ -1,8 +1,8 @@
 <?php
 const HOSTNAME = 'localhost';
 const USERNAME = 'root';
-const PASSWORD = 'root';
-const DATABASE = 'forcourse';
+const PASSWORD = '';
+const DATABASE = 'da';
 
 function db_connect()
 {
@@ -81,3 +81,19 @@ function GetALLAuthors()
 
 }
 
+//function AddToBooks()
+//{
+//
+//    $mysqli = db_connect();
+//
+//    $sql = "INSERT INTO books
+//VALUES ($book['title'],$book['articul'])";
+//
+//    $adding = mysqli_query($mysqli, $sql);
+//    $adding = mysqli_fetch_all($adding, MYSQLI_ASSOC);
+//
+//    db_close($mysqli);
+//
+//    return $adding;
+//
+//}
