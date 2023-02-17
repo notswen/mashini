@@ -29,7 +29,7 @@ table th {
     font-size: 20px;
     text-transform: uppercase;
     padding: 10px 5px;
-    background: rgba(255,120,10,0.27);
+    background: #89f874;
     text-align: center;
     border: 1px solid #c1c1c1;
     font-family: "Comic Sans MS";
@@ -38,8 +38,8 @@ table th {
 table td {
     padding: 8px 5px;
     font-size: 18px;
-    color: rgba(255,109,0,0.73);
-    border: 1px solid #e9e9e9;
+    color: rgba(255, 109, 0, 0.94);
+    border: 1px solid #8dff78;
     text-align: center;
     line-height: 16px;
     vertical-align: middle;
@@ -47,12 +47,13 @@ table td {
     font-family: "Comic Sans MS";
 }
 table tbody tr:nth-child(odd) td {
-    background: #f4f4f4;
+    background: #deddda;
 }
 .votvash {
-    background-color: #f4f4f4;
+    background-color: #777777;
     width: 100%;
     height: 100%;
+    border-radius: 10px;
 
 }
 .ssilka {
@@ -61,7 +62,7 @@ table tbody tr:nth-child(odd) td {
     padding-left: 39vw;
 }
 .fonlast {
-    background-color: rgba(192,88,0,0.49);
+    background-color: rgba(201, 190, 185, 0.65);
     width: 100vw;
     height: 100vh;
 
@@ -82,4 +83,31 @@ h1 {
     padding-left: 6vw;
     font-size: 140%;
     font-family: "Comic Sans MS";
+}
+.library {
+    text-align: center;
+    font-family: "Comic Sans MS";
+    color: #43ff21;
+    font-size: 333%;
+    padding-top: 6vh;
+}
+.forform {
+    background-color: #61e049;
+    border-radius: 9px;
+}
+.bubylda {
+    font-family: "Comic Sans MS";
+    color: #ff6d00;
+}
+.bubylda_p {
+    font-family: "Comic Sans MS";
+    color: #ff6d00;
+}
+.or{
+    font-family: "Comic Sans MS";
+    color: #ff6d00;
+    font-size: 150%;
+    padding-left: 14vw;
+    padding-top: 3vh;
+    color: #43ff21;
 }

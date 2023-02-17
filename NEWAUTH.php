@@ -17,23 +17,24 @@ if (!empty($_POST['user_name'])) {
 </head>
 <div class="shapka">
     <div class="top">
+        <div CLASS="library">LIBRARY</div>
         <form method="post" style="
               padding-left: 39vw;
-              padding-top: 33vh;
+              padding-top: 27vh;
               font-size: 177%;
               font-family: cursive;">
             <label class="pripiska_one"><b>Логин</b></label>
-            <input type="text" placeholder="введите логин" name="user_name">
+            <input type="text" class="forform" placeholder="введите логин" name="user_name">
             <br>
             <br>
             <label class="pripiska_two"><b>Пароль</b></label>
-            <input type="password" placeholder="введите пароль" name="password">
+            <input type="password" class="forform" placeholder="введите пароль" name="password">
             <br>
             <?php if (!$auth): ?>
                 <h1>Авторизация неуспешна</h1>
             <?php endif; ?>
             <br>
-            <input type="submit" style="font-size: 117%">
+            <input type="submit" class="forform" style="font-size: 117%">
         </form>
     </div>
 </div>

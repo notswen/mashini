@@ -1,8 +1,8 @@
 <?php
 const HOSTNAME = 'localhost';
 const USERNAME = 'root';
-const PASSWORD = 'root';
-const DATABASE = 'forcourse';
+const PASSWORD = '';
+const DATABASE = 'da';
 
 function db_connect()
 {
@@ -92,17 +92,17 @@ function AddToBooks($title,$articul,$description,$author_id,$customauthor)
     $author_id = mysqli_real_escape_string($mysqli, $author_id);
     $customauthor = mysqli_real_escape_string($mysqli, $customauthor);
 
-    if (!empty($customauthor)){
-        $sql = "INSERT INTO `authors`
-    (first_name, last_name) values 
-    ()
-    
-        
-    }
+//    if (!empty($customauthor)){
+//        $sql = "INSERT INTO `authors`
+//    (first_name, last_name) values
+//    ('{$customauthor}.split()')";
+//
+//
+//    }
 
     $sql = "INSERT INTO `books`
-    (title, articul, description, date_of_create, author_id) VALUES 
-    ('{$title}','{$articul}','{$description}', now(), '{$author_id}');";
+    (title, articul, description, date_of_create, author_id) VALUES
+        ('{$title}','{$articul}','{$description}', now(), '{$author_id}');";
     
 
 

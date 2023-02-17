@@ -26,8 +26,10 @@ $books = GetALLBooks();
 </table>
 <div class="votvash">
     <link rel="stylesheet" type="text/css" href="design.css"/>
-    <a class="ssilka" href="addbooks.php" style="color: rgba(255,120,12,0.71); text-decoration:none;"><b>Добавить книгу</b></a>
-    <a class="vihod" href="log_out.php" style="color: #a0461e; text-decoration:none;"><b>Выход</b></a>
+    <a class="ssilka" href="addbooks.php" style="color: #43ff21; text-decoration:none;"><b>Добавить книгу</b></a>
+    <a class="vihod" href="log_out.php" style="color: #ff6d00; text-decoration:none;"><b>Выход</b></a>
+    <div CLASS="library">LIBRARY</div>
 </div>
+
 
 

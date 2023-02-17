@@ -9,9 +9,15 @@ if (!empty($_POST)) {
     $customauthor = $_POST['customauthor'];
 
 }
-
-
-AddToBooks($title, $articul, $description, $author_id,$customauthor);
+//$adding = true;
+//if (!empty($_POST['description'])) {
+//    $adding = AddToBooks($title,$articul,$description,$author_id,$customauthor);
+//    if ($adding) {
+//        echo 'good';
+//    }
+//
+//}
+AddToBooks($title,$articul,$description,$author_id,$customauthor);
 ?>
 
 <link rel="stylesheet" type="text/css" href="design.css"/>
@@ -21,21 +27,21 @@ AddToBooks($title, $articul, $description, $author_id,$customauthor);
               padding-top: 27vh;
               font-size: 177%;
               font-family: cursive;">
-        <label><b>Название</b></label>
-        <input type="text" name="title">
+        <label class="bubylda"><b>Название</b></label>
+        <input type="text" class="forform" name="title">
         <br>
         <br>
-        <label><b>Артикул</b></label>
-        <input type="text" name="articul">
+        <label class="bubylda"><b>Артикул</b></label>
+        <input type="text" class="forform" name="articul">
         <br>
         <br>
         <br>
-        <label><b>Описание</b></label>
-        <input type="text" name="description">
+        <label class="bubylda"><b>Описание</b></label>
+        <input type="text" class="forform" name="description">
         <br>
         <br>
-        <label><b>Выберите автора из списка</b></label>
-        <select name="authors">
+        <label class="bubylda"><b>Выберите автора из списка</b></label>
+        <select name="authors" class="forform">
             <?php foreach ($avtors as $avtor): ?>
                 <option value="<?= $avtor['id'] ?>">
                     <?= $avtor['first_name'] . ' ' . $avtor['last_name'] ?>
@@ -43,12 +49,16 @@ AddToBooks($title, $articul, $description, $author_id,$customauthor);
             <?php endforeach; ?>
         </select>
         <br>
+        <div CLASS="or">ИЛИ</div>
         <br>
-        <label><b>Или добавьте своего автора</b></label>
-        <input type="text" name="customauthor">
+        <label class="bubylda_p"><b>Добавьте своего автора</b></label>
+        <input type="text" class="forform" name="customauthor">
         <br>
+<!--        --><?php //if (!$adding): ?>
+<!--            <h1>bad</h1>-->
+<!--        --><?php //endif; ?>
         <br>
-        <input type="submit">
+        <input type="submit" class="forform" style="font-size: 102%">
 
     </form>
 </div>
