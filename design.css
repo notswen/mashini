@@ -111,3 +111,10 @@ h1 {
     padding-top: 3vh;
     color: #43ff21;
 }
+.messag {
+    color: #a44822;
+    font-family: monospace;
+    font-size: 150%;
+    padding-top: 5vh;
+
+}

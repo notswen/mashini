@@ -32,4 +32,3 @@ $books = GetALLBooks();
 </div>
 
 
-

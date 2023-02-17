@@ -1,5 +1,6 @@
 <?php
 require_once 'base.php';
+session_start();
 $avtors = GetALLAuthors();
 if (!empty($_POST)) {
     $title = $_POST['title'];
@@ -7,6 +8,7 @@ if (!empty($_POST)) {
     $description = $_POST['description'];
     $author_id = $_POST['authors'];
     $customauthor = $_POST['customauthor'];
+    $_SESSION['message'] = 'Вы успешно добавили книгу';
 
 }
 //$adding = true;
@@ -26,18 +28,18 @@ AddToBooks($title,$articul,$description,$author_id,$customauthor);
               padding-left: 36vw;
               padding-top: 27vh;
               font-size: 177%;
-              font-family: cursive;">
+              font-family: cursive;" class="forrrm">
         <label class="bubylda"><b>Название</b></label>
-        <input type="text" class="forform" name="title">
+        <input required type="text" class="forform" name="title">
         <br>
         <br>
         <label class="bubylda"><b>Артикул</b></label>
-        <input type="text" class="forform" name="articul">
+        <input required type="text" class="forform" name="articul">
         <br>
         <br>
         <br>
         <label class="bubylda"><b>Описание</b></label>
-        <input type="text" class="forform" name="description">
+        <input required type="text" class="forform" name="description">
         <br>
         <br>
         <label class="bubylda"><b>Выберите автора из списка</b></label>
@@ -54,11 +56,12 @@ AddToBooks($title,$articul,$description,$author_id,$customauthor);
         <label class="bubylda_p"><b>Добавьте своего автора</b></label>
         <input type="text" class="forform" name="customauthor">
         <br>
-<!--        --><?php //if (!$adding): ?>
-<!--            <h1>bad</h1>-->
-<!--        --><?php //endif; ?>
+        <!--        --><?php //if (!$adding): ?>
+        <!--            <h1>bad</h1>-->
+        <!--        --><?php //endif; ?>
         <br>
         <input type="submit" class="forform" style="font-size: 102%">
+        <span class="messag"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></span>
 
     </form>
 </div>

@@ -1,8 +1,8 @@
 <?php
 const HOSTNAME = 'localhost';
 const USERNAME = 'root';
-const PASSWORD = '';
-const DATABASE = 'da';
+const PASSWORD = 'root';
+const DATABASE = 'forcourse';
 
 function db_connect()
 {
@@ -92,18 +92,18 @@ function AddToBooks($title,$articul,$description,$author_id,$customauthor)
     $author_id = mysqli_real_escape_string($mysqli, $author_id);
     $customauthor = mysqli_real_escape_string($mysqli, $customauthor);
 
-//    if (!empty($customauthor)){
-//        $sql = "INSERT INTO `authors`
-//    (first_name, last_name) values
-//    ('{$customauthor}.split()')";
-//
-//
-//    }
-
     $sql = "INSERT INTO `books`
-    (title, articul, description, date_of_create, author_id) VALUES
-        ('{$title}','{$articul}','{$description}', now(), '{$author_id}');";
-    
+    (title, articul, description, date_of_create) VALUES
+        ('{$title}','{$articul}','{$description}', now());";
+
+
+//    if (!empty($customauthor)){
+//        $author = explode(' ', $customauthor);
+//        $sql = "UPDATE `authors` SET first_name = '{$author[0]}' , last_name = '{$author[1]}' where title = '{$title}' and articul = '{$articul}";
+//    } else {
+//    $sql = "UPDATE `aut` SET first_name = '{$author[0]}' , last_name = '{$author[1]}' where title = '{$title}' and articul = '{$articul}'
+//    (title, articul, description, date_of_create, author_id) VALUES
+//        ('{$title}','{$articul}','{$description}', now(), '{$author_id}');";
 
 
     $adding = mysqli_query($mysqli, $sql);
