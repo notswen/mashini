@@ -19,16 +19,15 @@ $books = GetALLBooks();
             <td><?= $book['articul'] ?></td>
             <td><?= $book['description'] ?></td>
             <td><?= $book['date_of_create'] ?></td>
-            <td><?= $book['first_name'] . $book['last_name'] ?></td>
+            <td><?= $book['fullname'] ?></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
 </table>
 <div class="votvash">
     <link rel="stylesheet" type="text/css" href="design.css"/>
-    <a class="ssilka" href="addbooks.php" style="color: #43ff21; text-decoration:none;"><b>Добавить книгу</b></a>
-    <a class="vihod" href="log_out.php" style="color: #ff6d00; text-decoration:none;"><b>Выход</b></a>
-    <div CLASS="library">LIBRARY</div>
+    <a class="ssilka" href="addbooks.php" style="color: #43ff21; text-decoration:none; background-image: conic-gradient(#ff6d00, #cfff21, #a44822);color: transparent; -webkit-background-clip: text; "><b>Добавить книгу</b></a>
+    <a class="vihod" href="log_out.php" style="color: #ff6d00; text-decoration:none; background-image: conic-gradient(#ff6d00, #cfff21, #a44822);color: transparent; -webkit-background-clip: text;"><b>Выход</b></a>
+    <div CLASS="library">LIBRAFORREAL</div>
 </div>
-
 

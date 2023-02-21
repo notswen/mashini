@@ -38,7 +38,7 @@ table th {
 table td {
     padding: 8px 5px;
     font-size: 18px;
-    color: rgba(255, 109, 0, 0.94);
+    color: #908e23;
     border: 1px solid #8dff78;
     text-align: center;
     line-height: 16px;
@@ -62,18 +62,22 @@ table tbody tr:nth-child(odd) td {
     padding-left: 39vw;
 }
 .fonlast {
-    background-color: rgba(201, 190, 185, 0.65);
+    background-color: rgba(21,20,13,0.84);
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
 
 }
 .pripiska_one {
     font-family: "Comic Sans MS";
-    color: #ff6d00;
+    background-image: conic-gradient(#ff6d00, #cfff21, #a44822);
+    color: transparent;
+    -webkit-background-clip: text;
 }
 .pripiska_two {
     font-family: "Comic Sans MS";
-    color: #ff6d00;
+    background-image: conic-gradient(#ff6d00, #cfff21, #a44822);
+    color: transparent;
+    -webkit-background-clip: text;
 }
 h1 {
     font-family: "Comic Sans MS";
@@ -90,6 +94,10 @@ h1 {
     color: #43ff21;
     font-size: 333%;
     padding-top: 6vh;
+    font-weight: 600;
+    background-image: conic-gradient(#cfff21, #43ff21, #89f874);
+    color: transparent;
+    -webkit-background-clip: text;
 }
 .forform {
     background-color: #61e049;
@@ -97,24 +105,39 @@ h1 {
 }
 .bubylda {
     font-family: "Comic Sans MS";
-    color: #ff6d00;
+    background-image: conic-gradient(#ff6d00, #cfff21, #a44822);
+    color: transparent;
+    -webkit-background-clip: text;
+
+
 }
 .bubylda_p {
     font-family: "Comic Sans MS";
-    color: #ff6d00;
+    background-image: conic-gradient(#ff6d00, #cfff21, #a44822);
+    color: transparent;
+    -webkit-background-clip: text;
 }
 .or{
     font-family: "Comic Sans MS";
-    color: #ff6d00;
     font-size: 150%;
     padding-left: 14vw;
     padding-top: 3vh;
-    color: #43ff21;
+    background-image: conic-gradient(#89f874, #cfff21, #43ff21);
+    color: transparent;
+    -webkit-background-clip: text;
 }
 .messag {
-    color: #a44822;
-    font-family: monospace;
+    background-image: conic-gradient(#ff6d00, #cfff21, #a44822);
+    color: transparent;
+    -webkit-background-clip: text;
+    font-family: "Comic Sans MS";
     font-size: 150%;
-    padding-top: 5vh;
+    padding-top: 15vh;
 
+}
+.backing {
+    font-size: 210%;
+    font-family: cursive;
+    padding-top: 9vh;
+    padding-left: 9vw;
 }

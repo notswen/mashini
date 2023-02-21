@@ -17,7 +17,7 @@ if (!empty($_POST['user_name'])) {
 </head>
 <div class="shapka">
     <div class="top">
-        <div CLASS="library">LIBRARY</div>
+        <div CLASS="library">LIBRAFORREAL</div>
         <form method="post" style="
               padding-left: 39vw;
               padding-top: 27vh;

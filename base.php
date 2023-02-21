@@ -1,8 +1,8 @@
 <?php
 const HOSTNAME = 'localhost';
 const USERNAME = 'root';
-const PASSWORD = 'root';
-const DATABASE = 'forcourse';
+const PASSWORD = '';
+const DATABASE = 'da';
 
 function db_connect()
 {
@@ -32,7 +32,7 @@ function db_close($mysqli)
     return mysqli_close($mysqli);
 }
 
-function authorisation($user_name,$password)
+function authorisation($user_name, $password)
 {
     $mysqli = db_connect();
 
@@ -41,7 +41,7 @@ where login = '{$user_name}'";
 
     $aa = mysqli_query($mysqli, $sql);
     $aa = mysqli_fetch_all($aa, MYSQLI_ASSOC);
-    if (!empty($aa)){
+    if (!empty($aa)) {
         if (password_verify($password, $aa[0]['password'])) {
             return true;
         }
@@ -51,6 +51,7 @@ where login = '{$user_name}'";
 
     return false;
 }
+
 function GetALLBooks()
 {
     $mysqli = db_connect();
@@ -65,6 +66,7 @@ function GetALLBooks()
 
     return $books;
 }
+
 function GetALLAuthors()
 {
 
@@ -81,7 +83,7 @@ function GetALLAuthors()
 
 }
 
-function AddToBooks($title,$articul,$description,$author_id,$customauthor)
+function AddToBooks($title, $articul, $description, $author_id, $customauthor)
 {
 
     $mysqli = db_connect();
@@ -93,20 +95,27 @@ function AddToBooks($title,$articul,$description,$author_id,$customauthor)
     $customauthor = mysqli_real_escape_string($mysqli, $customauthor);
 
     $sql = "INSERT INTO `books`
-    (title, articul, description, date_of_create) VALUES
-        ('{$title}','{$articul}','{$description}', now());";
+    (title, articul, description, date_of_create, author_id) VALUES
+        ('{$title}','{$articul}','{$description}', now(), '{$author_id}')";
 
 
-//    if (!empty($customauthor)){
-//        $author = explode(' ', $customauthor);
-//        $sql = "UPDATE `authors` SET first_name = '{$author[0]}' , last_name = '{$author[1]}' where title = '{$title}' and articul = '{$articul}";
-//    } else {
-//    $sql = "UPDATE `aut` SET first_name = '{$author[0]}' , last_name = '{$author[1]}' where title = '{$title}' and articul = '{$articul}'
-//    (title, articul, description, date_of_create, author_id) VALUES
-//        ('{$title}','{$articul}','{$description}', now(), '{$author_id}');";
+    if (!empty($customauthor)) {
+        $sql = "INSERT INTO authors (fullname) values ('{$customauthor}')";
+
+    }
 
 
     $adding = mysqli_query($mysqli, $sql);
+    $newid = mysqli_insert_id($mysqli);
+    if (!empty($customauthor)) {
+        $sql = "INSERT INTO `books`
+    (title, articul, description, date_of_create, author_id) VALUES
+        ('{$title}','{$articul}','{$description}', now(), $newid)";
+        $adding = mysqli_query($mysqli, $sql);
+    }
+
+
+
 
     db_close($mysqli);
 

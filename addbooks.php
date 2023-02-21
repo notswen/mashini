@@ -8,7 +8,7 @@ if (!empty($_POST)) {
     $description = $_POST['description'];
     $author_id = $_POST['authors'];
     $customauthor = $_POST['customauthor'];
-    $_SESSION['message'] = 'Вы успешно добавили книгу';
+    $_SESSION['message'] = 'Вы успешно добавили книгу!';
 
 }
 //$adding = true;
@@ -24,9 +24,10 @@ AddToBooks($title,$articul,$description,$author_id,$customauthor);
 
 <link rel="stylesheet" type="text/css" href="design.css"/>
 <div class="fonlast">
+    <a class="backing" href="afterauth.php" style="background-image: conic-gradient(#ff6d00, #cfff21, #a44822);color: transparent;-webkit-background-clip: text;; text-decoration:none;"><b>назад</b></a>
     <form method="post" style="
               padding-left: 36vw;
-              padding-top: 27vh;
+              padding-top: 21vh;
               font-size: 177%;
               font-family: cursive;" class="forrrm">
         <label class="bubylda"><b>Название</b></label>
@@ -46,7 +47,7 @@ AddToBooks($title,$articul,$description,$author_id,$customauthor);
         <select name="authors" class="forform">
             <?php foreach ($avtors as $avtor): ?>
                 <option value="<?= $avtor['id'] ?>">
-                    <?= $avtor['first_name'] . ' ' . $avtor['last_name'] ?>
+                    <?= $avtor['fullname'] ?>
                 </option>
             <?php endforeach; ?>
         </select>
