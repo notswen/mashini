@@ -103,3 +103,33 @@ $car = new Car(1500, 'chevrolet', 'yellow', 4.4, 2,285);
 //echo '<br>';
 //echo $car->toString();
 
+class Article{
+    public static $counter = 0;
+
+    public function __construct()
+    {
+        self::$counter++;
+    }
+    public static function getCounter(){
+        return self::$counter;
+    }
+
+}
+$first = new Article();
+$second = new Article();
+$third = new Article();
+$fourth = new Article();
+var_dump(Article::getCounter());
+
+class Point {
+    public $x;
+    public $y;
+    
+    public function __construct($x,$y)
+    {
+        $this->
+
+    }
+
+
+}
