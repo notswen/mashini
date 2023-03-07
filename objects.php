@@ -1,7 +1,5 @@
 <?php
-
-class Plane
-{
+class Plane {
     private $weight;
     private $mark;
     private $color;
@@ -25,20 +23,18 @@ class Plane
         $this->speed = $speed;
     }
 
-    public function getWeight()
-    {
+    public function getWeight(){
         return $this->weight;
     }
 
-    public function setWeight($weight)
-    {
+    public function setWeight($weight){
         $this->weight = $weight;
     }
 
 
 }
 
-$plane = new Plane(25800, 'airbus', 'orange', 16, 252, 900);
+$plane = new Plane(25800, 'airbus','orange',16,252,900);
 //var_dump($plane);
 
 $weight = $plane->getWeight();
@@ -62,8 +58,7 @@ var_dump($plane->getWeight());
 //echo '<br>';
 //
 //$plane->toString();
-class Car
-{
+class Car {
     private $weight;
     private $mark;
     private $color;
@@ -71,8 +66,7 @@ class Car
     private $numberofseats;
     private $speed;
 
-    public function __construct($weight, $mark, $color, $length, $numberofseats, $speed)
-    {
+    public function __construct($weight, $mark, $color, $length, $numberofseats, $speed){
         $this->weight = $weight;
         $this->mark = $mark;
         $this->color = $color;
@@ -94,7 +88,7 @@ class Car
 //    }
 }
 
-$car = new Car(1500, 'chevrolet', 'yellow', 4.4, 2, 285);
+$car = new Car(1500, 'chevrolet', 'yellow', 4.4, 2,285);
 
 //var_dump($car);
 //echo '<br>';
@@ -106,130 +100,45 @@ $car = new Car(1500, 'chevrolet', 'yellow', 4.4, 2, 285);
 //
 //echo '<br>';
 //echo $car->toString();
+ abstract class Vehicle{
+     abstract function getName();
+ }
 
-class Article
-{
-    public static $counter = 0;
-
-    public function __construct()
-    {
-        self::$counter++;
-    }
-
-    public static function getCounter()
-    {
-        return self::$counter;
-    }
-
-}
-
-$first = new Article();
-$second = new Article();
-$third = new Article();
-$fourth = new Article();
-var_dump(Article::getCounter());
+ class Bus extends Vehicle{
+     public $year_of_issue;
+     public $weight;
 
 
-class Jopa{
-    public static $name;
+     public function getName()
+     {
+         echo 'Автобус весом ' . $this->weight . ' и ' . $this->year_of_issue . ' года выпуска';
+     }
 
-    public static function sum($one, $two){
-        echo $one + $two;
-    }
-
-    public static function setName($name){
-        self::$name=$name;
-    }
-}
-echo '<br>';
-Jopa::setName('ignat');
-Jopa::sum(12,45.6);
-echo Jopa::$name;
-
-//class Tickets{
-//    public static $price;
-//    public static $age;
-//    public static $name;
-//    public static $country;
-//
-//
-//    public static function setPrice($price){
-//        self::$price=$price;
-//    }
-//    public static function getPrice()
-//    {
-//        return self::$price;
-//    }
-//
-//
-//    public static function setAge($age){
-//        self::$age=$age;
-//    }
-//    public static function getAge()
-//    {
-//        return self::$age;
-//    }
-//
-//
-//    public static function setName($name){
-//        self::$name=$name;
-//    }
-//    public static function getName()
-//    {
-//        return self::$name;
-//    }
-//
-//
-//    public static function setCountry($country){
-//        self::$country=$country;
-//    }
-//    public static function getCountry()
-//    {
-//        return self::$country;
-//    }
-//
-//
-//
-//}
-//$nachalo = new Tickets();
-//echo '<br>';
-//echo '<br>';
-//Tickets::setPrice(100);
-//echo Tickets::getPrice();
-//echo '<br>';
-//Tickets::setAge(27);
-//echo Tickets::getAge();
-//echo '<br>';
-//Tickets::setName('Alexey');
-//echo Tickets::getName();
-//echo '<br>';
-//Tickets::setCountry('Kazakhstan');
-//echo Tickets::getCountry();
+     public function __construct($year_of_issue, $weight){
+         $this->weight = $weight;
+         $this->year_of_issue = $year_of_issue;
+     }
+ }
+ $bus=new Bus(1976, 4000);
+ echo '<br>';
+ $bus->getName();
 
 class Tickets{
-    public static $price;
-    public static $age = 27;
-    public static $name = 'Alexey';
-    public static $country = 'Kazakhstan';
+    private $price;
+    private static $name;
+    private static $country;
     public static $counter = 0;
 
-    public function __construct()
+    public function __construct($price)
     {
         self::$counter++;
+        $this->price;
     }
 
 
-    public static function setPrice($price){
-        self::$price=$price;
-    }
-    public static function getPrice()
+    public function getPrice()
     {
-        return self::$price;
-    }
-
-    public static function getAge()
-    {
-        return self::$age;
+        return $this->price;
     }
 
     public static function getName()
@@ -253,70 +162,53 @@ class Tickets{
 
 
 }
-$tickone = new Tickets();
-Tickets::setPrice(100);
+$tickone = new Tickets(31);
 echo '<br>';
 echo 'Билет №' . Tickets::getCounter();
 echo '<br>';
-echo Tickets::getPrice();
 echo '<br>';
-echo Tickets::getAge();
 echo '<br>';
 echo Tickets::getName();
 echo '<br>';
 echo Tickets::getCountry();
 echo '<br>';
-$ticktwo = new Tickets();
-Tickets::setPrice(100);
+$ticktwo = new Tickets(30);
 echo '<br>';
-echo 'Билет №' . Tickets::getCounter();
+echo 'Билет №' . Tickets::getCounter() . '<br>';
 echo '<br>';
-echo Tickets::getPrice();
-echo '<br>';
-echo Tickets::getAge();
 echo '<br>';
 echo Tickets::getName();
 echo '<br>';
 echo Tickets::getCountry();
 echo '<br>';
-$tickthree = new Tickets();
-Tickets::setPrice(32);
+$tickthree = new Tickets(28);
 echo '<br>';
 echo 'Билет №' . Tickets::getCounter();
 echo '<br>';
-echo Tickets::getPrice();
 echo '<br>';
-echo Tickets::getAge();
 echo '<br>';
 echo Tickets::getName();
 echo '<br>';
 echo Tickets::getCountry();
 echo '<br>';
-$tickfour = new Tickets();
-Tickets::setPrice(45);
+$tickfour = new Tickets(29);
 echo '<br>';
 echo 'Билет №' . Tickets::getCounter();
 echo '<br>';
-echo Tickets::getPrice();
 echo '<br>';
-echo Tickets::getAge();
 echo '<br>';
 echo Tickets::getName();
 echo '<br>';
 echo Tickets::getCountry();
 echo '<br>';
-$tickfive = new Tickets();
-Tickets::setPrice(270);
+$tickfive = new Tickets(35);
 echo '<br>';
 echo 'Билет №' . Tickets::getCounter();
 echo '<br>';
-echo Tickets::getPrice();
 echo '<br>';
-echo Tickets::getAge();
 echo '<br>';
 echo Tickets::getName();
 echo '<br>';
 echo Tickets::getCountry();
 echo '<br>';
-
 
