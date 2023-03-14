@@ -211,9 +211,9 @@ class Tickets
 $tickone = new Tickets(100);
 echo $tickone->getTickets(250, 2)
 ?>
-    <!--<link rel="stylesheet" type="text/css" href="design.css"/>-->
-    <!--<div class="bilet">-->
-    <!--    --><? // $tickone = new Tickets(31);
+<!--<link rel="stylesheet" type="text/css" href="design.css"/>-->
+<!--<div class="bilet">-->
+<!--    --><? // $tickone = new Tickets(31);
 //    echo '<br>';
 //    echo 'Билет №' . Tickets::getCounter() . '<br>';
 //    $tickone->setPayment(50);
@@ -222,10 +222,10 @@ echo $tickone->getTickets(250, 2)
 //    echo 'Принято к оплате: ' . $tickone->getPayment() .  $tickone->checking() .   '<br>';
 //    echo 'Сдача: ' . $tickone->getExtra() .  $tickone->checking() . '<br>';
 //    ?>
-    <!--</div>-->
-    <!---->
-    <!--<div class="bilet">-->
-    <!--    --><? // $ticktwo = new Tickets(30);
+<!--</div>-->
+<!---->
+<!--<div class="bilet">-->
+<!--    --><? // $ticktwo = new Tickets(30);
 //    echo '<br>';
 //    echo 'Билет №' . Tickets::getCounter() . '<br>';
 //    $ticktwo->setPayment(100);
@@ -234,10 +234,10 @@ echo $tickone->getTickets(250, 2)
 //    echo 'Принято к оплате: ' . $ticktwo->getPayment() .  $tickone->checking() . '<br>';
 //    echo 'Сдача: ' . $ticktwo->getExtra() .  $tickone->checking() . '<br>';
 //    ?>
-    <!--</div>-->
-    <!---->
-    <!--<div class="bilet">-->
-    <!--    --><? // $tickthree = new Tickets(28);
+<!--</div>-->
+<!---->
+<!--<div class="bilet">-->
+<!--    --><? // $tickthree = new Tickets(28);
 //    echo '<br>';
 //    echo 'Билет №' . Tickets::getCounter() . '<br>';
 //    $tickthree->setPayment(80);
@@ -246,11 +246,11 @@ echo $tickone->getTickets(250, 2)
 //    echo 'Принято к оплате: ' . $tickthree->getPayment() .  $tickone->checking() . '<br>';
 //    echo 'Сдача: ' . $tickthree->getExtra() .  $tickone->checking() . '<br>';
 //    ?>
-    <!--</div>-->
-    <!---->
-    <!---->
-    <!--<div class="bilet">-->
-    <!--    --><? // $tickfour = new Tickets(29);
+<!--</div>-->
+<!---->
+<!---->
+<!--<div class="bilet">-->
+<!--    --><? // $tickfour = new Tickets(29);
 //    echo '<br>';
 //    echo 'Билет №' . Tickets::getCounter() . '<br>';
 //    $tickfour->setPayment(35);
@@ -259,10 +259,10 @@ echo $tickone->getTickets(250, 2)
 //    echo 'Принято к оплате: ' . $tickfour->getPayment() .  $tickone->checking() . '<br>';
 //    echo 'Сдача: ' . $tickfour->getExtra() .  $tickone->checking() . '<br>';
 //    ?>
-    <!--</div>-->
+<!--</div>-->
 
 
-    ------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 <?php
 
 interface iCanMove
@@ -293,8 +293,9 @@ interface iCanFly
 //echo '<br>';
 //$aircraft = new AirCraft();
 //$aircraft->fly();
-
-
+?>
+<link rel="stylesheet" type="text/css" href="forobj.css"/>
+<?php
 trait Carrr
 {
     public function move()
@@ -308,6 +309,7 @@ trait Aircraftt
     public function fly()
     {
         echo "Полёт самолёта";
+        echo '<br>';
     }
 
 }
@@ -329,5 +331,135 @@ $aircraftt = new Aircraft();
 $aircraftt->fly();
 
 
+interface Geometry
+{
+    function area();
 
+    function perimeter();
+}
+
+class Square implements Geometry
+{
+    public $length_of_side;
+
+    function area()
+    {
+        return $this->length_of_side * $this->length_of_side;
+    }
+
+    function perimeter()
+    {
+        return 4 * $this->length_of_side;
+    }
+
+    public function __construct($length_of_side)
+    {
+        $this->length_of_side = $length_of_side;
+    }
+}
+
+echo '<br>';
+echo '<br>';
+$qvadr = new Square(19);
+?>
+    <div class="square">
+        <div class="rght"><? echo $qvadr->length_of_side . '<br>';?></div>
+    </div>
+<div class="undsq"><? echo $qvadr->length_of_side . '<br>';?></div>
+<div class="ploshadi">
+   <? echo 'S = ';
+    echo $qvadr->area() . '<br>';
+    echo 'P = ';
+    echo $qvadr->perimeter() . '<br>';
+    echo '<br>';?>
+</div>
+<?php
+
+class Rectangle implements Geometry
+{
+    public $width;
+    public $height;
+
+    function area()
+    {
+        return $this->width * $this->height;
+    }
+
+    function perimeter()
+    {
+        return 2 * ($this->height + $this->width);
+    }
+
+    public function __construct($height, $width)
+    {
+        $this->width = $width;
+        $this->height = $height;
+    }
+}
+
+?>
+<style>
+    .rectangle {
+        height: 50px;
+        width: 90px;
+        background-color: #43ff21;
+        border: 3px solid #1f1f0d;
+    }
+</style>
+</head>
+
+<div class="rectangle"></div>
+<?
+$pryamnik = new Rectangle(12,5);
+echo 'S = ';
+echo $pryamnik->area() . '<br>';
+echo 'P = ';
+echo $pryamnik->perimeter() . '<br>';
+echo '<br>';
+
+class Oval implements Geometry {
+public $bigradius;
+public $smallradius;
+
+function area(){
+return $this->bigradius*$this->smallradius;
+}
+function perimeter(){
+return round(2*sqrt(($this->bigradius*$this->bigradius+$this->smallradius*$this->smallradius)/2));
+}
+
+public function __construct($bigradius,$smallradius){
+$this->bigradius=$bigradius;
+$this->smallradius=$smallradius;
+}
+use MathConstants;
+}
+?>
+<style>
+    .oval {
+        width: 200px;
+        height: 100px;
+        background: #9CD6C0;
+        border-radius: 100px/50px;
+        border: 3px solid #1f1f0d;
+    }
+</style>
+</head>
+<body>
+
+<div class="oval"></div>
+<?
+$oval4ik = new Oval(13,2);
+echo 'S = ';
+echo $oval4ik->area();
+echo $oval4ik->pi() . '<br>';
+echo 'P = ';
+echo $oval4ik->perimeter();
+echo $oval4ik->pi();
+
+trait MathConstants{
+public function pi(){
+echo 'π';
+}
+}
 

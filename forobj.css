@@ -1,0 +1,27 @@
+.square {
+    height: 123px;
+    width: 123px;
+    background-color: #cfff21;
+    border: 3px solid #1f1f0d;
+}
+.rght{
+    padding-top: 48px;
+    padding-left: 130px;
+    font-family: "Bookman Old Style";
+    color: #f9220d;
+    font-size: 125%;
+}
+.undsq{
+    padding-left: 51px;
+    padding-bottom: 5px;
+    font-family: "Bookman Old Style";
+    color: #f9220d;
+    font-size: 125%;
+
+}
+.ploshadi{
+    font-size: 150%;
+    font-family: "Bookman Old Style";
+    padding-left: 15px;
+    color: #b20204
+}
