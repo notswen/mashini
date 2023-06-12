@@ -1,0 +1,18 @@
+.fortd {
+    border-bottom: 3px solid #46852d;
+    border-right: 3px solid #46852d;
+    font-size: 150%;
+    font-family: cursive;
+    padding-left: 2vw;
+}
+table{
+    border: 3px solid rgb(42, 68, 23);
+    border-radius: 3px;
+    background: #dff1d1;
+
+}
+.nadpis {
+    font-family: Consolas;
+    font-size: 189%;
+    padding-top: 3vh;
+}
