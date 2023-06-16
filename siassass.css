@@ -1,18 +1,27 @@
+html {
+    --orange-color: rgb(229, 151, 8);
+}
+
 .fortd {
-    border-bottom: 3px solid #46852d;
-    border-right: 3px solid #46852d;
+    border-bottom: 1px solid var(--orange-color);
+    border-right: 1px solid var(--orange-color);
     font-size: 150%;
     font-family: cursive;
-    padding-left: 2vw;
+    width: 3vh;
+    height: 3vh;
 }
 table{
-    border: 3px solid rgb(42, 68, 23);
+    border: 3px solid rgb(229, 151, 8);
     border-radius: 3px;
-    background: #dff1d1;
+    background: #515350;
 
 }
 .nadpis {
     font-family: Consolas;
     font-size: 189%;
     padding-top: 3vh;
+}
+
+.fortd.alive {
+    background-color: var(--orange-color);
 }
