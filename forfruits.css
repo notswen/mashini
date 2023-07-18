@@ -1,0 +1,62 @@
+.main{
+    background-color: #9cf691;
+    width: 99vw;
+    height: 100vh;
+    border-radius: 18px;
+
+}
+.points_and_everything{
+    background-color:  #9cf691;
+    width: 99vw;
+    height: 15vh;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.field{
+    background-color: white;
+    width: 91vw;
+    height: 80vh;
+    margin: 0 auto;
+    border-radius: 9px;
+    position: relative;
+}
+.pineapple{
+    width: 8vw;
+    height: 14vh;
+    position: absolute;
+}
+.watermelon{
+    width: 6vw;
+    height: 10vh;
+    position: absolute;
+}
+.apple{
+    width: 5vw;
+    height: 10vh;
+    position: absolute;
+}
+.basket{
+    width: 9vw;
+    height: 15vh;
+    position: absolute;
+    bottom: 5vh;
+}
+.lives{
+    background-color: white;
+    height: 3vh;
+    width: 3vw;
+}
+.scores{
+    background-color: white;
+    height: 3vh;
+    width: 3vw;
+
+}
+.time{
+    background-color: white;
+    height: 3vh;
+    width: 3vw;
+
+}
