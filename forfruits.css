@@ -1,13 +1,13 @@
 .main{
-    background-color: #9cf691;
-    width: 99vw;
+    background: url("https://cdn.dribbble.com/users/1123302/screenshots/2732948/attachments/554247/fruits-pattern-wallpaperlarge.png");
+    width: 98vw;
     height: 100vh;
     border-radius: 18px;
 
 }
 .points_and_everything{
-    background-color:  #9cf691;
-    width: 99vw;
+    background: url("https://cdn.dribbble.com/users/1123302/screenshots/2732948/attachments/554247/fruits-pattern-wallpaperlarge.png");
+    width: 98vw;
     height: 15vh;
     border-radius: 9px;
     display: flex;
@@ -21,15 +21,16 @@
     margin: 0 auto;
     border-radius: 9px;
     position: relative;
+    border: 3px solid yellow;
 }
 .pineapple{
-    width: 8vw;
-    height: 14vh;
+    width: 119px;
+    height: 105px;
     position: absolute;
 }
 .watermelon{
-    width: 6vw;
-    height: 10vh;
+    width: 89px;
+    height: 75px;
     position: absolute;
 }
 .apple{
@@ -38,25 +39,46 @@
     position: absolute;
 }
 .basket{
-    width: 9vw;
-    height: 15vh;
+    width: 134px;
+    height: 112px;
     position: absolute;
-    bottom: 5vh;
+    bottom: 37px;
 }
 .lives{
     background-color: white;
-    height: 3vh;
-    width: 3vw;
+    height: 43px;
+    width: 96px;
+    border: 3px solid yellow;
+    border-radius: 6px;
+    font-size: 180%;
+    font-family: Consolas;
+    text-align: center;
 }
 .scores{
     background-color: white;
-    height: 3vh;
-    width: 3vw;
+    height: 43px;
+    width: 96px;
+    border: 3px solid yellow;
+    border-radius: 6px;
+    font-size: 180%;
+    font-family: Consolas;
+    text-align: center;
 
 }
 .time{
     background-color: white;
-    height: 3vh;
-    width: 3vw;
-
+    height: 43px;
+    width: 96px;
+    border: 3px solid yellow;
+    border-radius: 6px;
+    font-size: 180%;
+    font-family: Consolas;
+    text-align: center;
+}
+.nameofgame{
+    text-align: center;
+    font-family: Consolas;
+    color: #1f1f0d;
+    font-size: 123%;
+    background: yellow;
 }

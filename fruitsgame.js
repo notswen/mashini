@@ -4,10 +4,10 @@ const gameBoard = document.getElementById("gameBoard");
 
 const net = {
     element: document.getElementById("net"),
-    x: 300,
+    x: 640,
     w: 200,
     speed: 0,
-    maxSpeed: 100
+    maxSpeed: 500
 };
 
 const fruits = [];
@@ -29,10 +29,18 @@ function main(){
         }else if (evt.code === "ArrowLeft") {
             net.speed = -net.maxSpeed;
         }
+        if (net.x <= 0){
+            net.x = 0;
+        }
+        if (net.x >= 1280){
+            net.x = 1280;
+        }
     });
     document.addEventListener("keyup", () => {
         net.speed = 0;
     });
+
+
     requestAnimationFrame( () => update(Date.now()));
     console.log(net )
 
@@ -44,6 +52,7 @@ function update(prevTime){
 
     net.x += net.speed * deltaTime;
     net.element.style.left = net.x + "px";
+
 
     requestAnimationFrame( () => update(nowTime));
 
