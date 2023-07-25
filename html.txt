@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра "Ловля фруктов"</title>
+    <link rel="stylesheet" href="forfruits.css">
+</head>
+<body>
+<div id="gameWrap">
+    <div id="scoreWrap">
+        <div id="livesCounter">Жизни</div>
+        <span id="scoreCounter">Очки</span>
+        <div id="timeCounter">Время</div>
+    </div>
+    <div id="gameBoard">
+        <img src="https://documents.infourok.ru/a73a9a78-34f5-4193-b753-327262492d1e/0/image001.gif" alt="" id="basket">
+        <!--                <img src="./img/fruit1.png" alt="" class="fruit">-->
+        <!--                <img src="./img/fruit2.png" alt="" class="fruit">-->
+        <!--                <img src="./img/fruit3.png" alt="" class="fruit">-->
+        <!--                <img src="./img/fruit4.png" alt="" class="fruit">-->
+    </div>
+</div>
+</body>
+<button id="restarty">Новая игра</button>
+<script src="fruitsgame.js"></script>
+</html>
